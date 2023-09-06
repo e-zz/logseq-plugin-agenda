@@ -6,6 +6,7 @@ import React, { useEffect } from 'react'
 import AddDailyLogModal from '@/components/AddDailyLogModal'
 import ModifySchedule, { type IScheduleValue } from '@/components/ModifySchedule'
 import PomodoroModal from '@/components/PomodoroModal'
+import TaskModal from '@/components/TaskModal'
 import TodayTaskModal from '@/components/TodayTaskModal'
 import useTheme from '@/hooks/useTheme'
 import { fullEventsAtom, journalEventsAtom, projectEventsAtom } from '@/model/events'
@@ -68,13 +69,14 @@ const ModalApp: React.FC<IModalAppProps> = (props) => {
       <StyleProvider hashPriority="high">
         <div className="w-screen h-screen">
           {type === 'modifySchedule' && (
-            <ModifySchedule
-              visible
-              type={props.data.type}
-              initialValues={props.data.initialValues}
-              onSave={onSave}
-              onCancel={onCancel}
-            />
+            // <ModifySchedule
+            //   visible
+            //   type={props.data.type}
+            //   initialValues={props.data.initialValues}
+            //   onSave={onSave}
+            //   onCancel={onCancel}
+            // />
+            <TaskModal open type="create" />
           )}
           {type === 'insertTodaySchedule' && (
             <TodayTaskModal visible uuid={props.data.uuid} onSave={onSave} onCancel={onCancel} />

@@ -1,10 +1,16 @@
+import { type ClassValue, clsx } from 'clsx'
 import { format, formatRFC3339, parse } from 'date-fns'
 import type { Dayjs } from 'dayjs'
 import dayjs from 'dayjs'
+import { twMerge } from 'tailwind-merge'
 
 // import en from 'dayjs/locale/en'
 import { DEFAULT_JOURNAL_FORMAT, DEFAULT_SETTINGS, SHOW_DATE_FORMAT } from './constants'
 import type { ISettingsForm } from './type'
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}
 
 // dayjs.locale({
 //   ...en,

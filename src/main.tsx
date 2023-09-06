@@ -55,7 +55,8 @@ if (isDevelopment) {
     },
     settings: window.mockSettings,
   })
-  renderApp()
+  // renderApp()
+  renderModalApp({ type: 'modifySchedule', data: { type: 'create' } })
   // renderPomodoroApp('pomodoro')
   // renderModalApp({ type: 'addDailyLog' })
   // renderSidebar()
