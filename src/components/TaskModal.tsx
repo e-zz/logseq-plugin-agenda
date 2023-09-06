@@ -1,29 +1,34 @@
+import { Button, Divider } from 'antd'
 import React, { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from '@/components/ui/dialog'
+import { Dialog, DialogContent, DialogFooter } from '@/components/ui/dialog'
+import { Input } from '@/components/ui/input'
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
 
 const TaskModal: React.FC<{
   open: boolean
   type: 'create' | 'modify'
-}> = () => {
+}> = ({ open }) => {
+  const { t } = useTranslation()
+
   return (
-    <Dialog>
-      <DialogTrigger>Open</DialogTrigger>
-      <DialogContent>
-        <DialogHeader>
-          <DialogTitle>Are you sure absolutely sure?</DialogTitle>
-          <DialogDescription>
-            This action cannot be undone. This will permanently delete your account and remove your data from our
-            servers.
-          </DialogDescription>
-        </DialogHeader>
+    <Dialog open={open}>
+      <DialogContent showCloseButton={false} className="max-w-xl top-[30%] py-4 px-0">
+        <div className="px-1">
+          <Input className="border-none focus-visible:ring-transparent text-xl" placeholder={t('Task Name')} />
+        </div>
+
+        <Popover>
+          <PopoverTrigger>Open</PopoverTrigger>
+          <PopoverContent>Place content for the popover here.</PopoverContent>
+        </Popover>
+
+        <Divider style={{ margin: 0 }} />
+        <DialogFooter className="px-3">
+          <Button>{t('Cancel')}</Button>
+          <Button type="primary">{t('Create Task')}</Button>
+        </DialogFooter>
       </DialogContent>
     </Dialog>
   )

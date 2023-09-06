@@ -39,6 +39,7 @@
     "@haydenull/use-pomodoro": "^1.1.4",
     "@logseq/libs": "^0.0.14",
     "@radix-ui/react-dialog": "^1.0.4",
+    "@radix-ui/react-popover": "^1.0.6",
     "antd": "^5.8.6",
     "axios": "^0.26.1",
     "class-variance-authority": "^0.7.0",
