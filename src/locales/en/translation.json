@@ -5,5 +5,14 @@
   "Content": "Content",
   "Cancel": "Cancel",
   "Add": "Add",
-  "Task Name": "Task Name"
+  "Task Name": "Task Name",
+  "Task Date": "Task Date",
+  "Priority": "Priority",
+  "Today": "Today",
+  "Tomorrow": "Tomorrow",
+  "Date Range": "Date Range",
+  "Time": "Time",
+  "Duration": "Duration",
+  "Weekend": "Weekend",
+  "Next Week": "Next Week"
 }
