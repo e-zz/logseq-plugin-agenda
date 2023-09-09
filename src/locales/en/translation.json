@@ -14,5 +14,9 @@
   "Time": "Time",
   "Duration": "Duration",
   "Weekend": "Weekend",
-  "Next Week": "Next Week"
+  "Next Week": "Next Week",
+  "All Day": "All Day",
+  "Start Time": "Start Time",
+  "End Time": "End Time",
+  "Start time cannot be the same as the end time": "Start time cannot be the same as the end time"
 }
