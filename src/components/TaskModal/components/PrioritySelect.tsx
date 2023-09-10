@@ -5,24 +5,25 @@ import { AiOutlineClose } from 'react-icons/ai'
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
 import { cn } from '@/util/util'
 
-const PrioritySelect = () => {
+import { type PriorityValue } from '..'
+
+const PrioritySelect = ({ value, onChange }: { value?: PriorityValue; onChange: (value?: PriorityValue) => void }) => {
   const { t } = useTranslation()
-  const [value, setValue] = useState()
   const [open, setOpen] = useState(false)
 
   const priorities = [
     { value: 'A', label: t('Priority') + ' A', textClassName: 'text-red-500', borderClassName: 'border-red-500' },
     { value: 'B', label: t('Priority') + ' B', textClassName: 'text-yellow-500', borderClassName: 'border-yellow-500' },
     { value: 'C', label: t('Priority') + ' C', textClassName: 'text-green-500', borderClassName: 'border-green-500' },
-  ]
+  ] as const
   const activeItem = priorities.find(({ value: _value }) => _value === value)
 
   const onClickItem = (value) => {
     setOpen(false)
-    setValue(value)
+    onChange(value)
   }
   const onClickClear = () => {
-    setValue(undefined)
+    onChange(undefined)
     setOpen(false)
   }
 

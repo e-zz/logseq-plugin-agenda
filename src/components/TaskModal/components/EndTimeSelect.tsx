@@ -4,14 +4,13 @@ import dayjs from 'dayjs'
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
+import { TIME_FORMATTER } from '@/constants/agenda'
 import { padZero } from '@/util/util'
 
 import s from '../index.module.less'
 
-export const TIME_FORMAT = 'HH:mm'
-
 const genTimeItems = (startTime?: string) => {
-  const start = startTime ? dayjs(startTime, TIME_FORMAT) : dayjs()
+  const start = startTime ? dayjs(startTime, TIME_FORMATTER) : dayjs()
 
   const items15 = new Array(3).fill(0).map((_, i) => {
     return start.add((i + 1) * 15, 'minute')
@@ -27,8 +26,8 @@ const genTimeItems = (startTime?: string) => {
 }
 const genOptions = (startTime?: string) => {
   return genTimeItems(startTime).map((time) => {
-    const timeStr = time.format(TIME_FORMAT)
-    const diff = time.diff(dayjs(startTime, TIME_FORMAT), 'minute')
+    const timeStr = time.format(TIME_FORMATTER)
+    const diff = time.diff(dayjs(startTime, TIME_FORMATTER), 'minute')
     const diffStr = diff < 60 ? `${diff}m` : `${diff / 60}h`
     return {
       label: `${timeStr}(${diffStr})`,
@@ -54,9 +53,9 @@ const EndTimeSelect = ({
     if (isNaN(hour) || isNaN(minutes)) return
     if (hour > 23 || minutes > 59) return
 
-    const startDay = startTime ? dayjs(startTime, TIME_FORMAT) : dayjs()
+    const startDay = startTime ? dayjs(startTime, TIME_FORMATTER) : dayjs()
     const timeStr = padZero(hour) + ':' + padZero(minutes)
-    const inputDay = dayjs(timeStr, TIME_FORMAT)
+    const inputDay = dayjs(timeStr, TIME_FORMATTER)
     if (inputDay.isBefore(startDay, 'minute')) return
 
     const diff = inputDay.diff(startDay, 'minute')

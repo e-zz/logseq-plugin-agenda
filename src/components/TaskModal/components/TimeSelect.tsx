@@ -4,11 +4,10 @@ import dayjs from 'dayjs'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
+import { TIME_FORMATTER } from '@/constants/agenda'
 import { padZero } from '@/util/util'
 
 import s from '../index.module.less'
-
-export const TIME_FORMAT = 'HH:mm'
 
 const genTimeItems = () => {
   const now = dayjs()
@@ -32,7 +31,7 @@ const TimeSelect = ({
   const { t } = useTranslation()
 
   const baseOptions = genTimeItems().map((time) => {
-    const timeStr = time.format(TIME_FORMAT)
+    const timeStr = time.format(TIME_FORMATTER)
     return {
       label: timeStr,
       value: timeStr,

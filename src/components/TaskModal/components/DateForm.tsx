@@ -1,21 +1,24 @@
 import { message } from 'antd'
 import dayjs, { type Dayjs } from 'dayjs'
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { Calendar } from '@/components/ui/calendar'
+import { TIME_FORMATTER } from '@/constants/agenda'
 import { replaceDateInfo, replaceTimeInfo } from '@/util/util'
 
 import { type DateFormValue } from '..'
 import DateShortcutBar from './DateShortcutBar'
 import EndTimeSelect from './EndTimeSelect'
-import TimeSelect, { TIME_FORMAT } from './TimeSelect'
+import TimeSelect from './TimeSelect'
 
 const DateForm = ({ value, onChange }: { value?: DateFormValue; onChange: (value: DateFormValue) => void }) => {
   const { t } = useTranslation()
+  const [isUseDefaultDuration, setIsUseDefaultDuration] = useState(true)
   const [messageApi, contextHolder] = message.useMessage()
   const calendarDate = value?.start ? value.start.toDate() : undefined
-  const startTime = value?.isAllDay === false ? value?.start?.format(TIME_FORMAT) : ''
-  const endTime = value?.isAllDay === false ? value?.end?.format(TIME_FORMAT) : ''
+  const startTime = value?.isAllDay === false ? value?.start?.format(TIME_FORMATTER) : ''
+  const endTime = value?.isAllDay === false ? value?.end?.format(TIME_FORMATTER) : ''
 
   // const duration = value?.start && value?.end ? value.end.diff(value.start, DURATION_UNIT) : 30
 
@@ -45,7 +48,7 @@ const DateForm = ({ value, onChange }: { value?: DateFormValue; onChange: (value
 
     const day = value?.start ?? dayjs()
     const start = dayjs(day.format('YYYY-MM-DD') + ' ' + time)
-    if (!value?.end) {
+    if (!value?.end || isUseDefaultDuration) {
       onChange({ isAllDay: false, start, end: start.add(30, 'minute') })
       return
     }
@@ -72,10 +75,11 @@ const DateForm = ({ value, onChange }: { value?: DateFormValue; onChange: (value
       return
     }
     if (!value?.start) return
+    setIsUseDefaultDuration(false)
     onChange({
       ...value,
       isAllDay: false,
-      end: replaceTimeInfo(value.start, dayjs(time, TIME_FORMAT)),
+      end: replaceTimeInfo(value.start, dayjs(time, TIME_FORMATTER)),
     })
   }
   // const onDurationChange = (duration: string) => {

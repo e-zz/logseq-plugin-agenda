@@ -56,7 +56,7 @@ if (isDevelopment) {
     settings: window.mockSettings,
   })
   // renderApp()
-  renderModalApp({ type: 'modifySchedule', data: { type: 'create' } })
+  renderModalApp({ type: 'createTask' })
   // renderPomodoroApp('pomodoro')
   // renderModalApp({ type: 'addDailyLog' })
   // renderSidebar()
@@ -197,6 +197,9 @@ export function renderModalApp(params: IModalAppProps) {
     switch (params.type) {
       case 'modifySchedule':
         app = <ModalApp type="modifySchedule" data={params.data} />
+        break
+      case 'createTask':
+        app = <ModalApp type="createTask" />
         break
       case 'addDailyLog':
         app = <ModalApp type="addDailyLog" />

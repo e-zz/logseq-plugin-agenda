@@ -1,6 +1,4 @@
 import { AutoComplete } from 'antd'
-import clsx from 'clsx'
-import dayjs, { type Dayjs } from 'dayjs'
 import { useTranslation } from 'react-i18next'
 
 import { cn } from '@/util/util'

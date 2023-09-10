@@ -18,5 +18,10 @@
   "All Day": "All Day",
   "Start Time": "Start Time",
   "End Time": "End Time",
-  "Start time cannot be the same as the end time": "Start time cannot be the same as the end time"
+  "Start time cannot be the same as the end time": "Start time cannot be the same as the end time",
+  "Project": "Project",
+  "Please enter a task name": "Please enter a task name",
+  "Please select a task date": "Please select a task date",
+  "Please select a project": "Please select a project",
+  "Failed to create today journal page": "Failed to create today journal page"
 }

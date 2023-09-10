@@ -23,6 +23,9 @@ type IModifySchedule = {
   }
   showKeepRef?: boolean
 }
+type ICreateTask = {
+  type: 'createTask'
+}
 type IInsertTodaySchedule = {
   type: 'insertTodaySchedule'
   data: {
@@ -36,7 +39,7 @@ type IPomodoroModal = {
 type IAddDailyLogModal = {
   type: 'addDailyLog'
 }
-export type IModalAppProps = IModifySchedule | IInsertTodaySchedule | IPomodoroModal | IAddDailyLogModal
+export type IModalAppProps = IModifySchedule | ICreateTask | IInsertTodaySchedule | IPomodoroModal | IAddDailyLogModal
 const ModalApp: React.FC<IModalAppProps> = (props) => {
   const theme = useTheme() || 'green'
 
@@ -69,15 +72,15 @@ const ModalApp: React.FC<IModalAppProps> = (props) => {
       <StyleProvider hashPriority="high">
         <div className="w-screen h-screen">
           {type === 'modifySchedule' && (
-            // <ModifySchedule
-            //   visible
-            //   type={props.data.type}
-            //   initialValues={props.data.initialValues}
-            //   onSave={onSave}
-            //   onCancel={onCancel}
-            // />
-            <TaskModal open type="create" />
+            <ModifySchedule
+              visible
+              type={props.data.type}
+              initialValues={props.data.initialValues}
+              onSave={onSave}
+              onCancel={onCancel}
+            />
           )}
+          {type === 'createTask' && <TaskModal open onSave={onSave} onCancel={onCancel} />}
           {type === 'insertTodaySchedule' && (
             <TodayTaskModal visible uuid={props.data.uuid} onSave={onSave} onCancel={onCancel} />
           )}

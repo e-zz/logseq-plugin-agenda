@@ -1,9 +1,10 @@
 /// <reference types="vite/client" />
 
 type IInterruption = import('./helper/pomodoro').IInterruption
+type AppUserConfigs = import('@logseq/libs/dist/LSPlugin').AppUserConfigs
 interface Window {
   faizNavigate: (e: unknown) => void
-  logseqAppUserConfigs: unknown
+  logseqAppUserConfigs: AppUserConfigs
   currentApp: 'app' | 'pomodoro' | 'modal'
   currentPomodoro: {
     uuid?: string
