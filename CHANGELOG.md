@@ -1,3 +1,19 @@
+# [3.10.0](https://github.com/e-zz/logseq-plugin-agenda/compare/v3.9.2...v3.10.0) (2024-04-08)
+
+
+### Bug Fixes
+
+* :bug: aoto siwtch theme when logseq's theme changed ([#301](https://github.com/e-zz/logseq-plugin-agenda/issues/301)) ([e9fcb8d](https://github.com/e-zz/logseq-plugin-agenda/commit/e9fcb8d5d0f26c1ba11c1175c53f7ac0775a8ab2))
+* **block.ts:** insert scheduled error when block has multiple lines ([#306](https://github.com/e-zz/logseq-plugin-agenda/issues/306)) ([9ede498](https://github.com/e-zz/logseq-plugin-agenda/commit/9ede49826a05048b71ece08c8cffd850bb9effde))
+* invalid duration string `DURATION:PT` ([#294](https://github.com/e-zz/logseq-plugin-agenda/issues/294)) ([70a780b](https://github.com/e-zz/logseq-plugin-agenda/commit/70a780bccf62a6fd17c252797a41aa85b8eb73ad))
+
+
+### Features
+
+* ✨ add dark theme ([#300](https://github.com/e-zz/logseq-plugin-agenda/issues/300)) ([fa8fd6c](https://github.com/e-zz/logseq-plugin-agenda/commit/fa8fd6ceba90900a8a00aadaef7b52ba653ea93a))
+* shortcuts ([7a09812](https://github.com/e-zz/logseq-plugin-agenda/commit/7a09812f032a3606323c74ccd4785269b2b3d9c2))
+* start of week ([c213283](https://github.com/e-zz/logseq-plugin-agenda/commit/c2132836c07bbece332aad6e7740ff6d065e923f))
+
 ## [3.10.3](https://github.com/haydenull/logseq-plugin-agenda/compare/v3.10.2...v3.10.3) (2024-04-08)
 
 
