@@ -1,3 +1,19 @@
+# [3.10.0](https://github.com/e-zz/logseq-plugin-agenda/compare/v3.9.2...v3.10.0) (2024-04-08)
+
+
+### Bug Fixes
+
+* shortcuts triggered when typing text ([aa21941](https://github.com/e-zz/logseq-plugin-agenda/commit/aa21941a23fa00db80ebb14da2a6ac2282cfb85d))
+
+
+### Features
+
+* ctrl+click on TaskCard to jump to the block ([6f9da31](https://github.com/e-zz/logseq-plugin-agenda/commit/6f9da31b32a8c4d0818b1c8e7f773d05d552f392))
+* ctrl+click to jump to block ([dc814ff](https://github.com/e-zz/logseq-plugin-agenda/commit/dc814ffbb4e7368afec0514684458a97fe092aba))
+* shortcuts ([d045fa9](https://github.com/e-zz/logseq-plugin-agenda/commit/d045fa9d086d7fc920275c462fc08c6989e1df9f))
+* shortcuts to quit, save and toggle a Task ([6071d1c](https://github.com/e-zz/logseq-plugin-agenda/commit/6071d1cfabff87e8a97986ea5379d7654b87929c))
+* **shortcuts:** Add keyboard shortcuts for navigating and toggling views in the calendar ([920356b](https://github.com/e-zz/logseq-plugin-agenda/commit/920356b87b144bb985c425d19e76120a04cf4220))
+
 ## [3.9.2](https://github.com/haydenull/logseq-plugin-agenda/compare/v3.9.1...v3.9.2) (2024-01-20)
 
 
