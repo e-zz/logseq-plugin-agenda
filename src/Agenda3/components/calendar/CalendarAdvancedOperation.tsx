@@ -6,7 +6,7 @@ import { IoMdCheckmark } from 'react-icons/io'
 import useSettings from '@/Agenda3/hooks/useSettings'
 import { cn } from '@/util/util'
 
-const CALENDAR_VIEWS = {
+export const CALENDAR_VIEWS = {
   dayGridMonth: 'dayGridMonth',
   timeGridWeek: 'timeGridWeek',
 } as const
@@ -37,7 +37,7 @@ const CalendarOperation = ({ value, onChange }: { value: CalendarView; onChange:
       onOpenChange={setOpen}
       dropdownRender={() => {
         return (
-          <div className="rounded-md bg-white shadow-lg dark:bg-[#333]">
+          <div className="dark:bg-[#333] rounded-md bg-white shadow-lg">
             <div className="flex flex-col gap-1 border-b px-2 py-2">
               {CALENDAR_OPTIONS.map((view) => {
                 const isSelected = value === view.value
@@ -45,9 +45,9 @@ const CalendarOperation = ({ value, onChange }: { value: CalendarView; onChange:
                   <div
                     key={view.value}
                     className={cn(
-                      'flex min-w-[120px] cursor-pointer items-center justify-between gap-2 rounded px-2 py-1 hover:bg-gray-300 hover:dark:bg-[#444]',
+                      'hover:dark:bg-[#444] flex min-w-[120px] cursor-pointer items-center justify-between gap-2 rounded px-2 py-1 hover:bg-gray-300',
                       {
-                        'bg-gray-200 dark:bg-[#555]': isSelected,
+                        'dark:bg-[#555] bg-gray-200': isSelected,
                       },
                     )}
                     onClick={() => onClickItem(view.value)}

@@ -6,7 +6,9 @@ import { RiDeleteBin4Line } from 'react-icons/ri'
 import { VscDebugConsole } from 'react-icons/vsc'
 
 import { minutesToHHmm } from '@/Agenda3/helpers/fullCalendar'
+import { navToLogseqBlock } from '@/Agenda3/helpers/logseq'
 import useAgendaEntities from '@/Agenda3/hooks/useAgendaEntities'
+import { logseqAtom } from '@/Agenda3/models/logseq'
 import { settingsAtom } from '@/Agenda3/models/settings'
 import { DEFAULT_ESTIMATED_TIME } from '@/constants/agenda'
 import type { AgendaEntity } from '@/types/entity'
@@ -18,6 +20,7 @@ import TaskModal from '../../modals/TaskModal'
 import Toolbar from './Toolbar'
 
 const TaskCard = ({ task }: { task: AgendaTaskWithStart }) => {
+  const currentGraph = useAtomValue(logseqAtom).currentGraph
   const settings = useAtomValue(settingsAtom)
   const groupType = settings.selectedFilters?.length ? 'filter' : 'page'
 
@@ -45,13 +48,22 @@ const TaskCard = ({ task }: { task: AgendaTaskWithStart }) => {
   const onRemoveDate = async (taskId: string) => {
     updateEntity({ type: 'task-remove-date', id: taskId, data: null })
   }
+  const onClickTask = (e: React.MouseEvent, task: AgendaTaskWithStart) => {
+    if (e.ctrlKey) {
+      navToLogseqBlock(task, currentGraph)
+      console.log(task)
+    } else {
+      setEditTaskModal({ open: true, task })
+    }
+    e.stopPropagation()
+  }
 
   return (
     <div
       className={cn(
-        'group/card cursor-pointer whitespace-pre-wrap rounded-md bg-white p-2 hover:shadow dark:bg-zinc-700',
+        'group/card dark:bg-zinc-700 cursor-pointer whitespace-pre-wrap rounded-md bg-white p-2 hover:shadow',
         {
-          'bg-[#edeef0] opacity-80 dark:bg-[#2f2f33]': task.status === 'done',
+          'dark:bg-[#2f2f33] bg-[#edeef0] opacity-80': task.status === 'done',
           // 循环任务及多天任务不能拖拽
           'droppable-task-element': !editDisabled && !isMultipleDays,
         },
@@ -96,12 +108,16 @@ const TaskCard = ({ task }: { task: AgendaTaskWithStart }) => {
           },
         }}
       >
-        <div onClick={() => setEditTaskModal({ open: true, task })}>
+        <div
+          onClick={(e) => {
+            onClickTask(e, task)
+          }}
+        >
           {/* ========= Toolbar ========= */}
           <Toolbar task={task} groupType={groupType} onClickMark={onClickTaskMark} />
 
           {/* ========= Title ========= */}
-          <div className={cn('my-0.5 text-gray-600 dark:text-gray-100', { 'line-through': task.status === 'done' })}>
+          <div className={cn('dark:text-gray-100 my-0.5 text-gray-600', { 'line-through': task.status === 'done' })}>
             {task.showTitle}
           </div>
 
