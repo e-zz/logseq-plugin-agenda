@@ -3,7 +3,8 @@ import type { AgendaEntity } from '@/types/entity'
 export const navToLogseqBlock = (task: AgendaEntity, currentGraph?: { name: string }) => {
   const uuid = task.recurringPast ? task.id.split('_')[0] : task.id
   if (import.meta.env.VITE_MODE === 'plugin') {
-    logseq.Editor.scrollToBlockInPage(task.project.originalName, uuid)
+    // logseq.Editor.scrollToBlockInPage(task.project.originalName, uuid)
+    logseq.App.pushState('page', { name: uuid })
     logseq.hideMainUI()
   } else {
     if (!currentGraph) return
