@@ -1,3 +1,32 @@
+# [3.10.0](https://github.com/e-zz/logseq-plugin-agenda/compare/v3.9.2...v3.10.0) (2024-07-22)
+
+
+### Bug Fixes
+
+* :bug: added toast for empty task name ([e16817b](https://github.com/e-zz/logseq-plugin-agenda/commit/e16817bb823e665802e66361e3cd6a1a940d6b4f))
+* :bug: aoto siwtch theme when logseq's theme changed ([#301](https://github.com/e-zz/logseq-plugin-agenda/issues/301)) ([e9fcb8d](https://github.com/e-zz/logseq-plugin-agenda/commit/e9fcb8d5d0f26c1ba11c1175c53f7ac0775a8ab2))
+* :bug: nOW task transfer to TODO task ([d74454c](https://github.com/e-zz/logseq-plugin-agenda/commit/d74454c9405ce053bf569f2b2e7b93548e46e72f)), closes [#262](https://github.com/e-zz/logseq-plugin-agenda/issues/262)
+* :bug: update task status after switch status in task modal ([952c880](https://github.com/e-zz/logseq-plugin-agenda/commit/952c88026baed6ab7d2843168492a05c1d3c2c7f)), closes [#284](https://github.com/e-zz/logseq-plugin-agenda/issues/284)
+* `navToLogseqBlock` fails for long pages ([290970d](https://github.com/e-zz/logseq-plugin-agenda/commit/290970dbae2dc1f83fbbf76af96058f0aac375bf))
+* **agenda2:** :bug: parse todoist id error ([ee1d301](https://github.com/e-zz/logseq-plugin-agenda/commit/ee1d301cb7b7586bf5bca944c927c9858fea5cd2))
+* **agenda2:** :bug: prevent the sync todoist button from being clicked repeatedly ([#315](https://github.com/e-zz/logseq-plugin-agenda/issues/315)) ([3183201](https://github.com/e-zz/logseq-plugin-agenda/commit/318320188c3813677165a2399a2912be661b4447)), closes [#312](https://github.com/e-zz/logseq-plugin-agenda/issues/312)
+* **block.ts:** insert scheduled error when block has multiple lines ([#306](https://github.com/e-zz/logseq-plugin-agenda/issues/306)) ([9ede498](https://github.com/e-zz/logseq-plugin-agenda/commit/9ede49826a05048b71ece08c8cffd850bb9effde))
+* **calendar:** :bug: show deadline in week view ([6a43384](https://github.com/e-zz/logseq-plugin-agenda/commit/6a433847503861706c17ad8adea8d9c75ba4cd22))
+* **calendar:** :bug: timed event from previous day causes incorrect +more count in calendar ([4ba6942](https://github.com/e-zz/logseq-plugin-agenda/commit/4ba6942e6c2bf36854a1da23e822106f44c78680)), closes [#316](https://github.com/e-zz/logseq-plugin-agenda/issues/316)
+* invalid duration string `DURATION:PT` ([#294](https://github.com/e-zz/logseq-plugin-agenda/issues/294)) ([70a780b](https://github.com/e-zz/logseq-plugin-agenda/commit/70a780bccf62a6fd17c252797a41aa85b8eb73ad))
+* **kanban:** :bug: some tasks are hidden in kanban ([#314](https://github.com/e-zz/logseq-plugin-agenda/issues/314)) ([e39fe12](https://github.com/e-zz/logseq-plugin-agenda/commit/e39fe1250c9cdfca8401566b4d991c34730b7d4f))
+
+
+### Features
+
+* ✨ add dark theme ([#300](https://github.com/e-zz/logseq-plugin-agenda/issues/300)) ([fa8fd6c](https://github.com/e-zz/logseq-plugin-agenda/commit/fa8fd6ceba90900a8a00aadaef7b52ba653ea93a))
+* **calendar:** :sparkles: show days to deadline ([5fabaec](https://github.com/e-zz/logseq-plugin-agenda/commit/5fabaecdff5c4375becfe45d833c648119af9075))
+* **calendar:** :sparkles: show deadline task in calendar ([ed5e060](https://github.com/e-zz/logseq-plugin-agenda/commit/ed5e0609f883753d8e08343b88cee832a885d6ae))
+* **kanban:** :sparkles: show deadline in kanban ([86ed350](https://github.com/e-zz/logseq-plugin-agenda/commit/86ed350e87de1f762df27327cf2f5d827dd95f60))
+* **settings:** :sparkles: support specify logseq api config in web [skip ci] ([7cffbee](https://github.com/e-zz/logseq-plugin-agenda/commit/7cffbeeab9e9b074791777a864e3c3ccc49e9e90))
+* shortcuts for agenda v3 ([#297](https://github.com/e-zz/logseq-plugin-agenda/issues/297)) ([790be0d](https://github.com/e-zz/logseq-plugin-agenda/commit/790be0ddf2d0c2b97481e5ec874a35d64fdc9143))
+* support set start of the week ([#296](https://github.com/e-zz/logseq-plugin-agenda/issues/296)) ([b87a00e](https://github.com/e-zz/logseq-plugin-agenda/commit/b87a00ef6f7e1aeb7f8db45ec469a6f420bbada9))
+
 ## [3.13.1](https://github.com/haydenull/logseq-plugin-agenda/compare/v3.13.0...v3.13.1) (2024-05-29)
 
 
