@@ -1,3 +1,15 @@
+# [3.14.0](https://github.com/e-zz/logseq-plugin-agenda/compare/v3.13.1...v3.14.0) (2025-02-18)
+
+
+### Bug Fixes
+
+* `navToLogseqBlock` fails for long pages ([290970d](https://github.com/e-zz/logseq-plugin-agenda/commit/290970dbae2dc1f83fbbf76af96058f0aac375bf))
+
+
+### Features
+
+* **settings:** :sparkles: support specify logseq api config in web [skip ci] ([7cffbee](https://github.com/e-zz/logseq-plugin-agenda/commit/7cffbeeab9e9b074791777a864e3c3ccc49e9e90))
+
 ## [3.13.1](https://github.com/haydenull/logseq-plugin-agenda/compare/v3.13.0...v3.13.1) (2024-05-29)
 
 
